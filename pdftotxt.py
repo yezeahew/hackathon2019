@@ -31,9 +31,12 @@ def convert_pdf_to_txt(path_to_file):
 
 def write_txt(file_path):
     text = convert_pdf_to_txt(file_path)
-    
-    out = open('out.txt','w')
+    file_name = file_path.split('/')[-1].split('.pdf')[0]
+    out_file_name = file_name + '.txt'
+
+    out = open(out_file_name,'w')
     out.write(text)
     out.close()
 
 # main call write_txt func with file path
+# write_txt("/Users/megano/Desktop/u/a.pdf")
