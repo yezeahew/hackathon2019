@@ -1,6 +1,7 @@
 def search(query, file_name):
     file = open(file_name, 'r')
-    texts = []
+    query_words = query.split()
+    return_lines = []
 
     for line in file:
         line = line.split('\n')
@@ -19,8 +20,11 @@ def search(query, file_name):
                 words = ' '.join(words.split('-'))
                 words = words.split()
                 for word in words:
-                    if word.lower() == query.lower():
-                        print(line[0])
-                        break
+                    for q in query_words:
+                        if word.lower() == q.lower():
+                            return_lines.append(line[0])
+                            break
 
-# search('jim','/Users/megano/Desktop/u/a.txt')
+    return return_lines
+
+# print(search('who is jim','/Users/megano/Desktop/u/a.txt'))
