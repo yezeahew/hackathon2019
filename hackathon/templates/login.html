@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>RuntimeError</title>
+    <link type='text/css' rel="stylesheet" href={{url_for('static', filename='css/styles.css')}}/>
+</head>
+<body>
+
+<div class='header'>
+    <p class='logo'>RUNTIME ERROR</p>
+</div>
+
+
+<div style="clear: both;"></div>
+
+<hr>
+
+<div class="center-block">
+    <form action="" method="post" enctype="multipart/form-data">
+        <input class="login-input" type="text" name="username" placeholder="Email*"/><br/>
+        <input class="login-input" type="password" name="password" placeholder="Password*"/><br/>
+    </form>
+
+<p class='p-button'><a href={{url_for('show_home')}}>Sign in with our partner platforms</a></p>
+<p class='small'>OR</p>
+<p class='p-button'>Sign Up</p>
+<p class='small'>By proceeding you also agree to the Terms of Service and Privacy Policy</p>
+</div>
+
+</body>
+</html>
+

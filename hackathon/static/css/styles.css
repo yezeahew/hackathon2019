@@ -1,0 +1,208 @@
+p {
+    font-family: Arial;
+    font-size:16px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.header {
+    overflow: hidden;
+    text-align: center;
+}
+
+.navigation {
+    float: right;
+    padding-right: 20px;
+}
+
+.navigation a {
+    color: black;
+}
+
+.logo {
+    padding-left: 20px;
+    float: left;
+}
+
+.center-block {
+    text-align: center;
+    margin: auto;
+    margin-top: 10%;
+}
+
+.center-block2 {
+    text-align: center;
+    margin: auto;
+}
+
+.p-button {
+    cursor: pointer;
+    background-color: #545454;
+    color: white;
+    border-radius: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    width: 400px;
+    display: inline-block;
+    font-size: 14px;
+
+}
+
+.p-button a {
+    color: white;
+}
+
+.small {
+    font-size: 12px;
+    color: grey;
+}
+
+.small a {
+    font-size: 12px;
+    color: grey;
+}
+
+.login-input {
+    width: 430px;
+    font-size: 14px;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    border: solid thin #E0E0E0;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.home-block {
+    overflow: hidden;
+    width: 60%;
+    display: inline-block;
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    border: 1px solid #B6B6B6;
+    border-radius: 5px 5px 5px 5px;
+    padding-bottom: 30px;
+    padding-top: 20px;
+}
+
+.search-input {
+    width: 80%;
+    height: 20px;
+}
+
+.search-button {
+    cursor: pointer;
+    background-color: transparent;
+    color: black;
+    border: 1px solid #B6B6B6;
+    border-radius: 5px 5px 5px 5px;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.inputfile {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.inputfile + label {
+    cursor: pointer;
+    color: black;
+    background-color: transparent;
+    border: solid 0.01px #CAC9C9;
+    display: inline-block;
+    font-family: Arial;
+    font-size: 12px;
+    padding: 30px 30px;
+    text-align: center
+}
+
+.inputfile:hover + label,
+.inputfile + label:hover {
+    background-color: #FBFBFB;
+}
+
+.upload-button {
+    cursor: pointer;
+    background-color: transparent;
+    color: black;
+    border: 1px solid #B6B6B6;
+    border-radius: 5px 5px 5px 5px;
+    padding: 5px 10px;
+    width: 95px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.unit-button {
+    cursor: pointer;
+    background-color: transparent;
+    color: black;
+    border: 1px solid #B6B6B6;
+    border-radius: 5px 5px 5px 5px;
+    padding: 5px 10px;
+    width: 400px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-family: Arial;
+    font-size:16px;
+}
+
+.generate-button {
+    cursor: pointer;
+    background-color: #545454;
+    border-radius: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    width: 200px;
+    display: inline-block;
+    font-size: 14px;
+    text-align: center;
+}
+
+.generate-button a {
+    color: white;
+}
+
+.summary-block {
+    margin: 30px;
+    padding: 20px 25px 15px 25px;
+    border: 1px solid #B6B6B6;
+    border-radius: 5px 5px 5px 5px;
+}
+
+.summary-block text {
+    font-size: 20px;
+    font-family: Arial;
+}
+
+.unit-block {
+    margin: 30px;
+}
+
+.unit-block a {
+    color: black;
+}
+
+.title {
+    margin-left: 20px;
+    font-size: 24px;
+}
+
+.margin-block {
+    margin: 30px;
+}

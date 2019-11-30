@@ -1,0 +1,38 @@
+{% extends "header.html" %}
+{% block content %}
+
+<div class="center-block2">
+    <div class="home-block">
+        <p>Search for an academic topic</p>
+        <form action="" method="post" enctype="multipart/form-data">
+            <input class="search-input" type="text" name="key"/>
+            <input class="search-button" type="submit" name="search" value="Search"/>
+        </form>
+    </div>
+    
+    <p class="small">OR</p>
+
+    <div class="home-block">
+        <p>Upload File</p>
+        <form action="" method="post" enctype="multipart/form-data">
+            <input class="inputfile" type="file" name="file" id="file"><label for="file">pdf file</label><br/>
+            <input type="text" name="topic" placeholder="Topic"/>
+            <input class="upload-button" type="submit" name="upload" value="Upload"/>
+        </form>
+    </div>
+
+    <p class="small">OR</p>
+
+    <div class="home-block">
+        <p>Select your own unit</p>
+        {% for unit in units %}
+            <form action="" method="post" enctype="multipart/form-data">
+                <input class="unit-button" type="submit" name="unit" value={{unit.unitname}}>
+                <input type="hidden" name="unitid" value={{unit.id}}>
+            </form>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
+
+

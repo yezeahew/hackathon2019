@@ -1,0 +1,66 @@
+#!/bin/bash
+
+# Stop on errors
+set -Eeuo pipefail
+
+usage() {
+  echo "Usage: $0 (create|destroy|reset|dump)"
+}
+
+if [ $# -ne 1 ]; then
+  usage
+  exit 1
+fi
+
+case $1 in
+  "create")
+    if [ -f "var/hackathon.sqlite3" ]
+    then
+      echo 'Error: database already exists'
+    else
+      mkdir -p var/uploads
+      echo '+ mkdir -p var/uploads'
+      sqlite3 var/hackathon.sqlite3 < sql/schema.sql
+      echo '+ sqlite3 var/hackathon.sqlite3 < sql/schema.sql'
+      sqlite3 var/hackathon.sqlite3 < sql/data.sql
+      echo '+ sqlite3 var/hackathon.sqlite3 < sql/data.sql'    
+      cp sql/uploads/* var/uploads/
+      echo '+ cp sql/uploads/* var/uploads/'
+    fi
+    ;;
+
+  "destroy")
+    rm -rf var/hackathon.sqlite3 var/uploads
+    echo '+ rm -rf var/hackathon.sqlite3 var/uploads'
+    ;;
+
+  "reset")
+    rm -rf var/hackathon.sqlite3 var/uploads
+    echo '+ rm -rf var/hackathon.sqlite3 var/uploads'
+    mkdir -p var/uploads
+    echo '+ mkdir -p var/uploads'
+    sqlite3 var/hackathon.sqlite3 < sql/schema.sql
+    echo '+ sqlite3 var/hackathon.sqlite3 < sql/schema.sql'
+    sqlite3 var/hackathon.sqlite3 < sql/data.sql
+    echo '+ sqlite3 var/hackathon.sqlite3 < sql/data.sql'
+    cp sql/uploads/* var/uploads/
+    echo '+ cp sql/uploads/* var/uploads/'
+    ;;
+
+  "dump")
+    sqlite3 -batch -line var/hackathon.sqlite3 'SELECT * FROM comments'
+    echo "+ sqlite3 -batch -line var/hackathon.sqlite3 'SELECT * FROM comments'"
+    sqlite3 -batch -line var/hackathon.sqlite3 'SELECT * FROM following'
+    echo "+ sqlite3 -batch -line var/hackathon.sqlite3 'SELECT * FROM following'"
+    sqlite3 -batch -line var/hackathon.sqlite3 'SELECT * FROM likes'
+    echo "+ sqlite3 -batch -line var/hackathon.sqlite3 'SELECT * FROM likes'"
+    sqlite3 -batch -line var/hackathon.sqlite3 'SELECT * FROM posts'
+    echo "+ sqlite3 -batch -line var/hackathon.sqlite3 'SELECT * FROM posts'"
+    sqlite3 -batch -line var/hackathon.sqlite3 'SELECT * FROM users'
+    echo "+ sqlite3 -batch -line var/hackathon.sqlite3 'SELECT * FROM users'"
+    ;;
+  *)
+    usage
+    exit 1
+    ;;
+esac
